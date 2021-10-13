@@ -14,17 +14,20 @@
       </div>
     </div>
   </div>
+  <pop-out-msg />
 </template>
 
 <script>
 import SignIn from "@/components/login/SignIn.vue";
 import SignUp from "@/components/login/SignUp.vue";
+import PopOutMsg from "@/components/popout/PopOutMsg.vue";
 
 export default {
   name: "login",
   components: {
     SignIn,
     SignUp,
+    PopOutMsg,
   },
   data() {
     return {

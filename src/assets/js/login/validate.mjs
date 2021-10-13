@@ -4,7 +4,7 @@
  * @returns 
  */
 function validateUserName(str) {
-    var pattern = /^.{3,16}$/;
+    var pattern = /^[\w|\!|\`|\.|\@|\#|\$|\^|\&|\*|\(|\)|\-|\+|\=|\'|\"|\:|\;|\?|\\|\/|\,|\[|\]|\<|\>]{3,16}$/;
     return pattern.test(str);
 }
 
