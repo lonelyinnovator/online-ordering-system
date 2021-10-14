@@ -10,7 +10,7 @@
     <!-- 登录注册表单内容 -->
     <div class="form-content">
       <!-- 登录表单 -->
-      <sign-in-form />
+      <sign-in-form @msgOn="msgOn" />
     </div>
   </div>
 </template>
@@ -25,7 +25,12 @@ export default {
   data() {
     return {};
   },
-  methods: {},
+  methods: {
+    msgOn(flag) {
+      this.$emit("msgOn", flag);
+      // console.log("signin: ", isSignin);
+    },
+  },
 };
 </script>
 

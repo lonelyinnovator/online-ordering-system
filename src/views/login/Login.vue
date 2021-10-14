@@ -6,7 +6,7 @@
     <div :class="getAnimationsClass()">
       <!-- 登录表单 -->
       <div :class="getSignInClass()">
-        <sign-in />
+        <sign-in @msgOn="msgOn" />
       </div>
       <!-- 注册表单 -->
       <div :class="getSignUpClass()">
@@ -14,7 +14,7 @@
       </div>
     </div>
   </div>
-  <pop-out-msg />
+  <pop-out-msg :msgFlag="msgFlag" />
 </template>
 
 <script>
@@ -36,6 +36,7 @@ export default {
         "flip-scale-down-ver",
         "rotate-scale-down",
       ],
+      msgFlag: false,
     };
   },
   methods: {
@@ -83,6 +84,14 @@ export default {
       }
       return res;
     },
+
+    /**
+     * 子组件传递来是否登录成功的消息
+     */
+    msgOn(flag) {
+      this.msgFlag = flag;
+      console.log("login:", this.msgFlag);
+    },
   },
 };
 </script>
@@ -105,8 +114,11 @@ export default {
   top: 0;
   width: 100vw;
   height: 100vh;
-  background-color: pink;
-  animation: bg 2s linear 0.1s infinite alternate;
+  background: url("https://cdn.jsdelivr.net/gh/lonelyinnovator/cdn@1.0/images/1.jpg")
+    no-repeat;
+  background-size: cover;
+  // background-color: pink;
+  // animation: bg 2s linear 0.1s infinite alternate;
 }
 
 // 登录页面

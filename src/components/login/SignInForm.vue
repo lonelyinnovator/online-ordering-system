@@ -78,7 +78,7 @@ export default {
       //密码
       password: "",
       //是否已登录
-      // isSignin: false,
+      isSignin: false,
       //用户名错误信息是否可见
       username_visibility: "hidden",
       // 密码错误信息是否可见
@@ -159,7 +159,9 @@ export default {
         .catch((err) => {
           console.log(err);
         });
-      this.$router.push("/home");
+      this.isSignin = true;
+      this.$emit("msgOn", true);
+      // this.$router.push("/home");
     },
   },
 };

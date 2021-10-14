@@ -23,10 +23,19 @@ export default {
   name: "popoutmsg",
   data() {
     return {
-      visibility: "visible",
+      visibility: "hidden",
       msg_header: "注册成功",
       msg_content: "返回登录页面",
+      // signinFlag: false,
+      // isSignin: this.props.isSignin,
     };
+  },
+  props: {
+    msgFlag: {
+      type: Boolean,
+      default: false,
+      required: true,
+    },
   },
   methods: {
     close() {
@@ -34,7 +43,28 @@ export default {
     },
     confirm() {
       this.visibility = "hidden";
+      this.msgFlag = false;
     },
+    changeVisible(curVal, oldVal) {
+      console.log(curVal);
+      console.log(oldVal);
+      if (curVal && !oldVal) {
+        this.visibility = "visible";
+      } else {
+        this.visibility = "hidden";
+      }
+      // if (this.signinFlag) {
+      //   return "visible";
+      // }
+      // return "hidden";
+    },
+  },
+  watch: {
+    msgFlag: "changeVisible",
+    // isSignin(val, newval) {
+    //   console.log(val);
+    //   console.log(newval);
+    // },
   },
 };
 </script>

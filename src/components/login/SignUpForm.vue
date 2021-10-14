@@ -102,6 +102,7 @@ export default {
       email_visibility: "hidden",
       username_visibility: "hidden",
       password_visibility: "hidden",
+      // isSignUp: false,
     };
   },
   methods: {
