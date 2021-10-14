@@ -8,7 +8,7 @@
     </div>
     <!-- 注册表单内容 -->
     <div class="form-content">
-      <sign-up-form />
+      <sign-up-form @msgOn="msgOn" />
     </div>
   </div>
 </template>
@@ -23,7 +23,11 @@ export default {
   data() {
     return {};
   },
-  methods: {},
+  methods: {
+    msgOn(flag, msg) {
+      this.$emit("msgOn", flag, msg);
+    },
+  },
 };
 </script>
 

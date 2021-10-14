@@ -195,6 +195,8 @@ export default {
         .catch((err) => {
           console.log(err);
         });
+      let msg = { header: "注册成功", content: "即将进入登录页面" };
+      this.$emit("msgOn", true, msg);
       // this.sign();
       // 强制刷新本页面
       // this.$router.go(0);

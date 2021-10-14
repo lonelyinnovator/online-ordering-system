@@ -26,9 +26,8 @@ export default {
     return {};
   },
   methods: {
-    msgOn(flag) {
-      this.$emit("msgOn", flag);
-      // console.log("signin: ", isSignin);
+    msgOn(flag, msg) {
+      this.$emit("msgOn", flag, msg);
     },
   },
 };

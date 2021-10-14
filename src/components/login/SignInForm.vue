@@ -160,7 +160,8 @@ export default {
           console.log(err);
         });
       this.isSignin = true;
-      this.$emit("msgOn", true);
+      let msg = { header: "登录成功", content: "即将进入首页" };
+      this.$emit("msgOn", true, msg);
       // this.$router.push("/home");
     },
   },

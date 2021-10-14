@@ -10,11 +10,11 @@
       </div>
       <!-- 注册表单 -->
       <div :class="getSignUpClass()">
-        <sign-up />
+        <sign-up @msgOn="msgOn" />
       </div>
     </div>
   </div>
-  <pop-out-msg :msgFlag="msgFlag" />
+  <pop-out-msg :msgFlag="msgFlag" :msg="msg" @updateMsgFlag="updateMsgFlag" />
 </template>
 
 <script>
@@ -34,9 +34,10 @@ export default {
       animations: [
         "flip-2-ver-left-2",
         "flip-scale-down-ver",
-        "rotate-scale-down",
+        // "rotate-scale-down",
       ],
       msgFlag: false,
+      msg: {},
     };
   },
   methods: {
@@ -88,9 +89,13 @@ export default {
     /**
      * 子组件传递来是否登录成功的消息
      */
-    msgOn(flag) {
+    msgOn(flag, msg) {
       this.msgFlag = flag;
-      console.log("login:", this.msgFlag);
+      this.msg = msg;
+      console.log("login:", this.msgFlag, this.msg);
+    },
+    updateMsgFlag(flag) {
+      this.msgFlag = flag;
     },
   },
 };
@@ -100,11 +105,13 @@ export default {
 @import "../../assets/css/login/animations.css";
 // 背景动画
 @keyframes bg {
-  0% {
-    background-color: pink;
-  }
+  0%,
   100% {
-    background-color: #bbe6d6;
+    // background-color: pink;
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
   }
 }
 
@@ -114,11 +121,12 @@ export default {
   top: 0;
   width: 100vw;
   height: 100vh;
-  background: url("https://cdn.jsdelivr.net/gh/lonelyinnovator/cdn@1.1/images/1.jpg")
+  background: url("https://cdn.jsdelivr.net/gh/lonelyinnovator/cdn@1.0/images/bg.jpeg")
     no-repeat;
   background-size: cover;
   // background-color: pink;
-  // animation: bg 2s linear 0.1s infinite alternate;
+  opacity: 0.9;
+  // animation: bg 20s ease-in-out 0.1s infinite alternate;
 }
 
 // 登录页面
@@ -147,10 +155,11 @@ export default {
       top: 0;
       width: 100%;
       height: 100%;
-      border-radius: 30px;
+      border-radius: 50px;
       overflow: hidden;
       border: 1px solid #ccc;
-      box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.3);
+      // box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.3);
+      box-shadow: 0 0 100px -5px rgb(0 0 0 / 25%);
     }
 
     //设置前置box
