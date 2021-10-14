@@ -134,15 +134,18 @@ export default {
   position: relative;
   display: flex;
   width: 100%;
-  height: 1000px;
+  height: 100vh;
+  // height: 1000px;
+  // height: 1000px;
   justify-content: center;
+  align-items: center;
   // background-color: pink;
   // animation: bg 2s linear 0.1s infinite alternate;
 
   // 登录表单位置
   .login-pos {
     position: relative;
-    top: 120px;
+    // top: 120px;
     width: 600px;
     height: 500px;
     transform-style: preserve-3d;
@@ -159,7 +162,9 @@ export default {
       overflow: hidden;
       border: 1px solid #ccc;
       // box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.3);
-      box-shadow: 0 0 100px -5px rgb(0 0 0 / 25%);
+      -webkit-box-shadow: 0 0 100px -5px rgb(0 0 0 / 25%);
+      -moz-box-shadow: 0 0 100px -5px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 0 100px -5px rgba(0, 0, 0, 0.3);
     }
 
     //设置前置box
@@ -197,6 +202,7 @@ export default {
     .login-pos {
       // animation: wto500 0.5s linear 0s 1 forwards;
       width: 500px;
+      // min-height: 400px;
     }
   }
 }
@@ -216,6 +222,12 @@ export default {
       // animation: wto90per 0.5s linear 0s 1 forwards;
       width: 90%;
     }
+  }
+}
+
+@media screen and (max-height: 500px) {
+  .login {
+    align-items: flex-start;
   }
 }
 

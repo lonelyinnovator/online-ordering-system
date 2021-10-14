@@ -43,9 +43,10 @@ export default {
   width: 100%;
   height: 100%;
   flex-direction: column;
-  background: #c9d6ff;
-  background: -webkit-linear-gradient(to right, #e2e2e2, #c9d6ff);
-  background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+  background-color: #cdd8fb;
+  // background: #c9d6ff;
+  // background: -webkit-linear-gradient(to right, #e2e2e2, #c9d6ff);
+  // background: linear-gradient(to right, #e2e2e2, #c9d6ff);
 
   .signin-header {
     display: flex;

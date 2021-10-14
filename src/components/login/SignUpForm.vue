@@ -209,13 +209,43 @@ export default {
 @import "../../assets/css/login/common.css";
 .sign-form {
   padding: 10px 50px;
-}
 
-.single-line-wrapper {
-  margin-top: 15px;
-}
+  .single-line-wrapper {
+    margin-top: 15px;
 
-.submit-line {
-  margin-top: 10px;
+    .icu {
+      .iconclass {
+        color: #fca072;
+      }
+    }
+
+    .single-line-right {
+      .email-input,
+      .username-input,
+      .password-input {
+        border-bottom: 1px solid #fca072;
+      }
+    }
+  }
+
+  .submit-line {
+    margin-top: 10px;
+
+    .submit {
+      // background: linear-gradient(120deg, #3498db, #8e44ad, #3498db);
+      background: #ffb75e;
+      background: -webkit-linear-gradient(to right, #ed8f03, #ffb75e);
+      background: linear-gradient(to right, #ed8f03, #ffb75e);
+      color: #fff;
+    }
+  }
+
+  .sign-switch {
+    .sign-link {
+      a {
+        color: #ed8f03;
+      }
+    }
+  }
 }
 </style>

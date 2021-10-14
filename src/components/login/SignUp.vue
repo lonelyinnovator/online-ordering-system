@@ -41,9 +41,10 @@ export default {
   width: 100%;
   height: 100%;
   flex-direction: column;
-  background: #ee9ca7;
-  background: -webkit-linear-gradient(to right, #ffdde1, #ee9ca7);
-  background: linear-gradient(to right, #ffdde1, #ee9ca7);
+  background-color: #fdd3d9;
+  // background: #ee9ca7;
+  // background: -webkit-linear-gradient(to right, #ffdde1, #ee9ca7);
+  // background: linear-gradient(to right, #ffdde1, #ee9ca7);
 
   .signup-header {
     display: flex;

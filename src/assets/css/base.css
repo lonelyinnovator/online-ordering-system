@@ -28,7 +28,7 @@ body {
     color: var(--color-text);
     /* rem vw/vh */
     width: 100vw;
-    min-width: 320px;
+    min-width: 280px;
     overflow-x: hidden;
 }
 
