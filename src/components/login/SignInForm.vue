@@ -144,7 +144,7 @@ export default {
     sendRequest() {
       axios({
         // url: "http://101.132.73.96/test/login",
-        url: "http://101.132.73.96/test/login",
+        url: "http://101.132.73.96/test-1.0/login",
         method: "post",
         params: {
           name: this.username,

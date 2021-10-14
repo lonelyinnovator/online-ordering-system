@@ -15,7 +15,7 @@
 
 @font-face {
     font-family: zpix;
-    src: url(../fonts/zpix.ttf);
+    src: url("https://cdn.jsdelivr.net/gh/lonelyinnovator/cdn@1.1/fonts/zpix.ttf");
 }
 
 body {

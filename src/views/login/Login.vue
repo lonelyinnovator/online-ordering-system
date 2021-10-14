@@ -114,7 +114,7 @@ export default {
   top: 0;
   width: 100vw;
   height: 100vh;
-  background: url("https://cdn.jsdelivr.net/gh/lonelyinnovator/cdn@1.0/images/1.jpg")
+  background: url("https://cdn.jsdelivr.net/gh/lonelyinnovator/cdn@1.1/images/1.jpg")
     no-repeat;
   background-size: cover;
   // background-color: pink;
