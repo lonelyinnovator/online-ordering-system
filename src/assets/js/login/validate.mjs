@@ -4,7 +4,8 @@
  * @returns 
  */
 function validateUserName(str) {
-    var pattern = /^[\w|\!|\`|\.|\@|\#|\$|\^|\&|\*|\(|\)|\-|\+|\=|\'|\"|\:|\;|\?|\\|\/|\,|\[|\]|\<|\>]{3,16}$/;
+    var pattern = /^[\w\!\`\.\@\#\$\^\&\*\(\)\-\+\=\'\"\:\;\?\\\/\,\[\]\<\>\|\%]{3,16}$/;
+    console.log("test:", pattern.test(str));
     return pattern.test(str);
 }
 
