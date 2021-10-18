@@ -148,6 +148,7 @@ export default {
     // top: 120px;
     width: 600px;
     height: 500px;
+    transition: all 0.3s ease;
     transform-style: preserve-3d;
     // perspective: 1000px;
 
