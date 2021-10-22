@@ -96,6 +96,7 @@ export default {
     },
     updateMsgFlag(flag) {
       this.msgFlag = flag;
+      this.$router.push("/test");
     },
   },
 };
