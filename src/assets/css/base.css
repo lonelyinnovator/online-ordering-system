@@ -13,13 +13,13 @@
     box-sizing: border-box;
 }
 
-@font-face {
+/* @font-face {
     font-family: zpix;
-    src: url(../fonts/zpix.ttf);
-}
+    src: url("https://cdn.jsdelivr.net/gh/lonelyinnovator/cdn@1.1/fonts/zpix.ttf");
+} */
 
 body {
-    font-family: "zpix", "Segoe UI", "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
+    font-family: "Segoe UI", "Helvetica Neue", Helvetica, "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "微软雅黑", Arial, sans-serif;
     user-select: none;
     /* 禁止用户鼠标在页面上选中文字/图片等 */
     -webkit-tap-highlight-color: transparent;
@@ -28,7 +28,7 @@ body {
     color: var(--color-text);
     /* rem vw/vh */
     width: 100vw;
-    min-width: 320px;
+    min-width: 280px;
     overflow-x: hidden;
 }
 

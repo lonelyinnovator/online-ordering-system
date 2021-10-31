@@ -6,15 +6,15 @@
     <div :class="getAnimationsClass()">
       <!-- 登录表单 -->
       <div :class="getSignInClass()">
-        <sign-in />
+        <sign-in @msgOn="msgOn" />
       </div>
       <!-- 注册表单 -->
       <div :class="getSignUpClass()">
-        <sign-up />
+        <sign-up @msgOn="msgOn" />
       </div>
     </div>
   </div>
-  <pop-out-msg />
+  <pop-out-msg :msgFlag="msgFlag" :msg="msg" @updateMsgFlag="updateMsgFlag" />
 </template>
 
 <script>
@@ -34,8 +34,10 @@ export default {
       animations: [
         "flip-2-ver-left-2",
         "flip-scale-down-ver",
-        "rotate-scale-down",
+        // "rotate-scale-down",
       ],
+      msgFlag: false,
+      msg: {},
     };
   },
   methods: {
@@ -83,6 +85,19 @@ export default {
       }
       return res;
     },
+
+    /**
+     * 子组件传递来是否登录成功的消息
+     */
+    msgOn(flag, msg) {
+      this.msgFlag = flag;
+      this.msg = msg;
+      console.log("login:", this.msgFlag, this.msg);
+    },
+    updateMsgFlag(flag) {
+      this.msgFlag = flag;
+      this.$router.push("/test");
+    },
   },
 };
 </script>
@@ -91,11 +106,13 @@ export default {
 @import "../../assets/css/login/animations.css";
 // 背景动画
 @keyframes bg {
-  0% {
-    background-color: pink;
-  }
+  0%,
   100% {
-    background-color: #bbe6d6;
+    // background-color: pink;
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.2);
   }
 }
 
@@ -105,8 +122,12 @@ export default {
   top: 0;
   width: 100vw;
   height: 100vh;
-  background-color: pink;
-  animation: bg 2s linear 0.1s infinite alternate;
+  background: url("https://cdn.jsdelivr.net/gh/lonelyinnovator/cdn@1.0/images/bg.jpeg")
+    no-repeat;
+  background-size: cover;
+  // background-color: pink;
+  opacity: 0.9;
+  // animation: bg 20s ease-in-out 0.1s infinite alternate;
 }
 
 // 登录页面
@@ -114,17 +135,21 @@ export default {
   position: relative;
   display: flex;
   width: 100%;
-  height: 1000px;
+  height: 100vh;
+  // height: 1000px;
+  // height: 1000px;
   justify-content: center;
+  align-items: center;
   // background-color: pink;
   // animation: bg 2s linear 0.1s infinite alternate;
 
   // 登录表单位置
   .login-pos {
     position: relative;
-    top: 120px;
+    // top: 120px;
     width: 600px;
     height: 500px;
+    transition: all 0.3s ease;
     transform-style: preserve-3d;
     // perspective: 1000px;
 
@@ -135,10 +160,13 @@ export default {
       top: 0;
       width: 100%;
       height: 100%;
-      border-radius: 30px;
+      border-radius: 50px;
       overflow: hidden;
       border: 1px solid #ccc;
-      box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.3);
+      // box-shadow: 1px 2px 2px 1px rgba(0, 0, 0, 0.3);
+      -webkit-box-shadow: 0 0 100px -5px rgb(0 0 0 / 25%);
+      -moz-box-shadow: 0 0 100px -5px rgba(0, 0, 0, 0.25);
+      box-shadow: 0 0 100px -5px rgba(0, 0, 0, 0.3);
     }
 
     //设置前置box
@@ -176,6 +204,7 @@ export default {
     .login-pos {
       // animation: wto500 0.5s linear 0s 1 forwards;
       width: 500px;
+      // min-height: 400px;
     }
   }
 }
@@ -195,6 +224,12 @@ export default {
       // animation: wto90per 0.5s linear 0s 1 forwards;
       width: 90%;
     }
+  }
+}
+
+@media screen and (max-height: 500px) {
+  .login {
+    align-items: flex-start;
   }
 }
 

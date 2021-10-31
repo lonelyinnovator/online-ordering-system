@@ -78,7 +78,7 @@ export default {
       //密码
       password: "",
       //是否已登录
-      // isSignin: false,
+      isSignin: false,
       //用户名错误信息是否可见
       username_visibility: "hidden",
       // 密码错误信息是否可见
@@ -144,7 +144,9 @@ export default {
     sendRequest() {
       axios({
         // url: "http://101.132.73.96/test/login",
-        url: "http://101.132.73.96/test/login",
+        // url: "http://101.132.73.96/test-1.0/login",
+        // url: "http://101.132.73.96/web/login",
+        url: "http://101.132.73.96/web/login",
         method: "post",
         params: {
           name: this.username,
@@ -159,7 +161,10 @@ export default {
         .catch((err) => {
           console.log(err);
         });
-      this.$router.push("/home");
+      this.isSignin = true;
+      let msg = { header: "登录成功", content: "即将进入首页" };
+      this.$emit("msgOn", true, msg);
+      // this.$router.push("/home");
     },
   },
 };

@@ -5,11 +5,11 @@
     <div class="popout-pos scale-in-center">
       <!-- 框头 -->
       <div class="popout-header">
-        <h3>{{ msg_header }}</h3>
+        <h3>{{ msg.header }}</h3>
         <a href="#" @click="close">✖</a>
       </div>
       <!-- 内容 -->
-      <div class="popout-content">{{ msg_content }}</div>
+      <div class="popout-content">{{ msg.content }}</div>
       <!-- 确认按钮 -->
       <div class="popout-confirm">
         <button @click="confirm">确定</button>
@@ -23,18 +23,65 @@ export default {
   name: "popoutmsg",
   data() {
     return {
-      visibility: "visible",
+      visibility: "hidden",
       msg_header: "注册成功",
       msg_content: "返回登录页面",
+      // signinFlag: false,
+      // isSignin: this.props.isSignin,
     };
   },
+  props: {
+    //父组件传入的参数，表示该消息弹出框是否被调用
+    msgFlag: {
+      type: Boolean,
+      default: false,
+      required: true,
+    },
+    //父组件传入的消息
+    msg: {
+      type: Object,
+      default: {},
+    },
+  },
   methods: {
+    /**
+     * 关闭该消息弹出框
+     */
     close() {
       this.confirm();
     },
+    /**
+     * 点击确认按钮触发事件
+     */
     confirm() {
       this.visibility = "hidden";
+      this.$emit("updateMsgFlag", false);
     },
+    /**
+     * 当消息弹出框被调用时使该弹出框显示
+     */
+    changeVisible(curVal, oldVal) {
+      console.log(curVal);
+      console.log(oldVal);
+      if (curVal && !oldVal) {
+        this.visibility = "visible";
+      } else {
+        this.visibility = "hidden";
+      }
+      // if (this.signinFlag) {
+      //   return "visible";
+      // }
+      // return "hidden";
+    },
+  },
+  //动态监听属性的变化
+  watch: {
+    //若监听到消息弹出框被调用，就调用该函数
+    msgFlag: "changeVisible",
+    // isSignin(val, newval) {
+    //   console.log(val);
+    //   console.log(newval);
+    // },
   },
 };
 </script>

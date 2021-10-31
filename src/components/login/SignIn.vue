@@ -10,7 +10,7 @@
     <!-- 登录注册表单内容 -->
     <div class="form-content">
       <!-- 登录表单 -->
-      <sign-in-form />
+      <sign-in-form @msgOn="msgOn" />
     </div>
   </div>
 </template>
@@ -25,7 +25,11 @@ export default {
   data() {
     return {};
   },
-  methods: {},
+  methods: {
+    msgOn(flag, msg) {
+      this.$emit("msgOn", flag, msg);
+    },
+  },
 };
 </script>
 
@@ -39,9 +43,10 @@ export default {
   width: 100%;
   height: 100%;
   flex-direction: column;
-  background: #c9d6ff;
-  background: -webkit-linear-gradient(to right, #e2e2e2, #c9d6ff);
-  background: linear-gradient(to right, #e2e2e2, #c9d6ff);
+  background-color: #cdd8fb;
+  // background: #c9d6ff;
+  // background: -webkit-linear-gradient(to right, #e2e2e2, #c9d6ff);
+  // background: linear-gradient(to right, #e2e2e2, #c9d6ff);
 
   .signin-header {
     display: flex;
