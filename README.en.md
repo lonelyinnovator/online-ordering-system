@@ -1,6 +1,6 @@
-# WebCourse
+# OnlineOrderingSystem
 
 #### Description
-This is a web system.
+This is an online ordering system.
 
 [gitee web page](https://lonelyinnovator.gitee.io/online-ordering-system/#/)<br/>
