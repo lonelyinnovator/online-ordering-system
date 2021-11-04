@@ -3,18 +3,22 @@
   <div class="sidebar">
     <!-- 侧边栏头部 -->
     <div class="sidebar-header">
-      <a href="/#/home">test</a>
+      <slot name="header"></slot>
+<!--      <a href="/#/home">test</a>-->
     </div>
-    <!-- 侧边栏内容 -->
-    <div class="sidebar-content">
-      <!-- 侧边栏行 -->
-      <div class="sidebar-line">
-        <a href="/#/home">1</a>
-      </div>
-      <div class="sidebar-line">
-        <a href="/#/home">2</a>
-      </div>
-    </div>
+
+    <slot name="content"></slot>
+<!--    &lt;!&ndash; 侧边栏内容 &ndash;&gt;-->
+<!--    <div class="sidebar-content">-->
+<!--      -->
+<!--      &lt;!&ndash; 侧边栏行 &ndash;&gt;-->
+<!--      <div class="sidebar-line">-->
+<!--        <a href="/#/home">1</a>-->
+<!--      </div>-->
+<!--      <div class="sidebar-line">-->
+<!--        <a href="/#/home">2</a>-->
+<!--      </div>-->
+<!--    </div>-->
   </div>
 </template>
 
@@ -52,38 +56,38 @@ export default {
     }
   }
 
-  .sidebar-content {
-    position: relative;
-    display: flex;
-    flex: 1;
-    width: 100%;
-    box-sizing: border-box;
-    flex-direction: column;
-    justify-content: flex-start;
-    align-items: center;
+  /*.sidebar-content {*/
+  /*  position: relative;*/
+  /*  display: flex;*/
+  /*  flex: 1;*/
+  /*  width: 100%;*/
+  /*  box-sizing: border-box;*/
+  /*  flex-direction: column;*/
+  /*  justify-content: flex-start;*/
+  /*  align-items: center;*/
 
-    .sidebar-line {
-      display: flex;
-      width: 100%;
-      flex-direction: row;
-      justify-content: center;
-      align-items: center;
+  /*  .sidebar-line {*/
+  /*    display: flex;*/
+  /*    width: 100%;*/
+  /*    flex-direction: row;*/
+  /*    justify-content: center;*/
+  /*    align-items: center;*/
 
-      a {
-        display: flex;
-        width: 100%;
-        padding: 5px;
-        flex-direction: row;
-        justify-content: center;
-        font-size: 14px;
+  /*    a {*/
+  /*      display: flex;*/
+  /*      width: 100%;*/
+  /*      padding: 5px;*/
+  /*      flex-direction: row;*/
+  /*      justify-content: center;*/
+  /*      font-size: 14px;*/
 
-        &:hover {
-          background-color: rgba(0, 0, 0, 0.3);
-          color: skyblue;
-        }
-      }
-    }
-  }
+  /*      &:hover {*/
+  /*        background-color: rgba(0, 0, 0, 0.3);*/
+  /*        color: skyblue;*/
+  /*      }*/
+  /*    }*/
+  /*  }*/
+  /*}*/
 }
 
 @media screen and (max-width: 500px) {
