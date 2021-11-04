@@ -5,6 +5,9 @@ const user = () => import("@/views/home/User.vue");
 const test = () => import("@/views/test/Test.vue");
 
 const userHome = () => import("@/components/user/Home.vue");
+const userShoppingCart = () => import("@/components/user/ShoppingCart.vue");
+const userOrderings = () => import("@/components/user/Orderings.vue");
+const userSettings = () => import("@/components/user/Settings.vue");
 
 
 const routes = [
@@ -31,6 +34,21 @@ const routes = [
         path: "home",
         name: "home",
         component: userHome,
+      },
+      {
+        path: "shoppingcart",
+        name: "shoppingcart",
+        component: userShoppingCart,
+      },
+      {
+        path: "orderings",
+        name: "orderings",
+        component: userOrderings,
+      },
+      {
+        path: "settings",
+        name: "settings",
+        component: userSettings,
       }
     ]
   },

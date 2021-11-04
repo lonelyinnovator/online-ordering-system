@@ -1,7 +1,7 @@
 <template>
-  <div class="user-home">
-    <div class="user-home-content">
-      <div class="user-home-header">
+  <div class="user-settings">
+    <div class="user-settings-content">
+      <div class="user-settings-header">
         <h2>{{ title }}</h2>
       </div>
     </div>
@@ -10,11 +10,11 @@
 
 <script>
 export default {
-  name: "Home",
+  name: "Settings",
   components: {},
   data() {
     return {
-      title: "home",
+      title: "settings",
     };
   },
   methods: {},
@@ -22,19 +22,19 @@ export default {
 </script>
 
 <style lang="less" scoped>
-.user-home {
+.user-settings {
   position: relative;
   width: 100%;
   height: 500px;
   padding: 0 30px;
   background-color: #ccc;
 
-  .user-home-content {
+  .user-settings-content {
     position: relative;
     width: 100%;
     height: 100%;
 
-    .user-home-header {
+    .user-settings-header {
       display: flex;
       position: relative;
       top: 0;
