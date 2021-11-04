@@ -96,12 +96,8 @@ export default {
     },
     updateMsgFlag(flag) {
       this.msgFlag = flag;
-<<<<<<< HEAD
-      this.$router.push("/test");
-=======
       // console.log(msg);
       this.$router.push("/user/home");
->>>>>>> 72ffa5002af7545c737d05836b7ad3bb2a18a490
     },
   },
 };
