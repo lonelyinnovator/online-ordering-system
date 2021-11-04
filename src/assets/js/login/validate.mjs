@@ -1,7 +1,7 @@
 /**
  * 验证用户名
- * @param {String} str 
- * @returns 
+ * @param {String} str
+ * @returns
  */
 function validateUserName(str) {
     var pattern = /^[\w\!\`\.\@\#\$\^\&\*\(\)\-\+\=\'\"\:\;\?\\\/\,\[\]\<\>\|\%]{3,16}$/;
@@ -11,30 +11,31 @@ function validateUserName(str) {
 
 /**
  * 验证密码
- * @param {String} str 
- * @returns 
+ * @param {String} str
+ * @returns
  */
 function validatePassword(str) {
-    var pattern = /^.{8,255}$/;
+    // var pattern = /^.{8,255}$/;
+    var pattern = /^.{3,255}$/;
     return pattern.test(str);
 }
 
 /**
  * 验证邮箱
- * @param {String} str 
+ * @param {String} str
  * @returns
  */
 function validateEmail(str) {
-    var pattern = /^\w+@{1}\w+\.*\w+$/;
+    var pattern = /^\w+@\w+\.*\w+$/;
     return pattern.test(str);
 }
 
 
 /**
  * 验证用户提交的表单是否正确
- * @param {String} type 
- * @param {String} str 
- * @returns 
+ * @param {String} type
+ * @param {String} str
+ * @returns
  */
 export function validate(type, str) {
     if (type === "username") {

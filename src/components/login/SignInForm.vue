@@ -46,7 +46,7 @@
           />
         </div>
         <div class="error-message" :style="{ visibility: password_visibility }">
-          请输入正确的密码，长度至少为8个字符
+          请输入正确的密码，长度至少为3个字符
         </div>
       </div>
     </div>

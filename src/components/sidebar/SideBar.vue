@@ -3,6 +3,7 @@
   <div class="sidebar">
     <!-- 侧边栏头部 -->
     <div class="sidebar-header">
+<<<<<<< HEAD
       <a href="/#/home">test</a>
     </div>
     <!-- 侧边栏内容 -->
@@ -15,6 +16,24 @@
         <a href="/#/home">2</a>
       </div>
     </div>
+=======
+      <slot name="header"></slot>
+<!--      <a href="/#/home">test</a>-->
+    </div>
+
+    <slot name="content"></slot>
+<!--    &lt;!&ndash; 侧边栏内容 &ndash;&gt;-->
+<!--    <div class="sidebar-content">-->
+<!--      -->
+<!--      &lt;!&ndash; 侧边栏行 &ndash;&gt;-->
+<!--      <div class="sidebar-line">-->
+<!--        <a href="/#/home">1</a>-->
+<!--      </div>-->
+<!--      <div class="sidebar-line">-->
+<!--        <a href="/#/home">2</a>-->
+<!--      </div>-->
+<!--    </div>-->
+>>>>>>> 72ffa5002af7545c737d05836b7ad3bb2a18a490
   </div>
 </template>
 
@@ -52,6 +71,7 @@ export default {
     }
   }
 
+<<<<<<< HEAD
   .sidebar-content {
     position: relative;
     display: flex;
@@ -84,6 +104,40 @@ export default {
       }
     }
   }
+=======
+  /*.sidebar-content {*/
+  /*  position: relative;*/
+  /*  display: flex;*/
+  /*  flex: 1;*/
+  /*  width: 100%;*/
+  /*  box-sizing: border-box;*/
+  /*  flex-direction: column;*/
+  /*  justify-content: flex-start;*/
+  /*  align-items: center;*/
+
+  /*  .sidebar-line {*/
+  /*    display: flex;*/
+  /*    width: 100%;*/
+  /*    flex-direction: row;*/
+  /*    justify-content: center;*/
+  /*    align-items: center;*/
+
+  /*    a {*/
+  /*      display: flex;*/
+  /*      width: 100%;*/
+  /*      padding: 5px;*/
+  /*      flex-direction: row;*/
+  /*      justify-content: center;*/
+  /*      font-size: 14px;*/
+
+  /*      &:hover {*/
+  /*        background-color: rgba(0, 0, 0, 0.3);*/
+  /*        color: skyblue;*/
+  /*      }*/
+  /*    }*/
+  /*  }*/
+  /*}*/
+>>>>>>> 72ffa5002af7545c737d05836b7ad3bb2a18a490
 }
 
 @media screen and (max-width: 500px) {
@@ -91,4 +145,8 @@ export default {
     width: 50px;
   }
 }
+<<<<<<< HEAD
 </style>
+=======
+</style>
+>>>>>>> 72ffa5002af7545c737d05836b7ad3bb2a18a490
