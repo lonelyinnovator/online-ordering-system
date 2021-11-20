@@ -47,11 +47,17 @@ export default {
   },
   data() {
     return {
+      // path: [
+      //   "http://lonelyinnovator.gitee.io/online-ordering-system/#/user/home",
+      //   "http://lonelyinnovator.gitee.io/online-ordering-system/#/user/shoppingcart",
+      //   "http://lonelyinnovator.gitee.io/online-ordering-system/#/user/orderings",
+      //   "http://lonelyinnovator.gitee.io/online-ordering-system/#/user/settings",
+      // ],
       path: [
-        "/online-ordering-system/#/user/home",
-        "/online-ordering-system/#/user/shoppingcart",
-        "/online-ordering-system/#/user/orderings",
-        "/online-ordering-system/#/user/settings",
+        "/user/home",
+        "/user/shoppingcart",
+        "/user/orderings",
+        "/user/settings",
       ],
     };
   },
@@ -90,7 +96,8 @@ export default {
       }
       // set the href of the event target
       if (idx != -1) {
-        tar.href = this.path[idx];
+        this.$router.push(this.path[idx]);
+        // tar.href = this.path[idx];
       }
     },
   },
