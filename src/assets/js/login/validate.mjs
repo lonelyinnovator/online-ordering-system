@@ -5,7 +5,7 @@
  */
 function validateUserName(str) {
     var pattern = /^[\w\!\`\.\@\#\$\^\&\*\(\)\-\+\=\'\"\:\;\?\\\/\,\[\]\<\>\|\%]{3,16}$/;
-    console.log("test:", pattern.test(str));
+    // console.log("test:", pattern.test(str));
     return pattern.test(str);
 }
 
@@ -21,12 +21,12 @@ function validatePassword(str) {
 }
 
 /**
- * 验证邮箱
+ * 验证手机号
  * @param {String} str
  * @returns
  */
-function validateEmail(str) {
-    var pattern = /^\w+@\w+\.*\w+$/;
+function validatePhone(str) {
+    var pattern = /^[\d\-]{3,255}$/;
     return pattern.test(str);
 }
 
@@ -44,8 +44,9 @@ export function validate(type, str) {
     else if (type === "password") {
         return validatePassword(str);
     }
-    else if (type === "email") {
-        return validateEmail(str);
+    else if (type === "phone") {
+        return validatePhone(str);
     }
     return false;
 }
+

@@ -3,12 +3,15 @@
   height: 100%;
   padding: 40px 50px 0;
 }
+
 .sign-form .single-line-wrapper {
   margin-top: 20px;
 }
+
 .sign-form .single-line-wrapper .icu {
   padding: 15px 0;
 }
+
 .sign-form .iconclass {
   font-size: 24px;
   color: #4680a5;
@@ -17,17 +20,20 @@
   line-height: 24px;
   margin-right: 20px;
 }
+
 .sign-form .single-line-wrapper .single-line-right {
   flex: 1 1 0%;
 }
+
 .sign-form .single-line-wrapper .single-line-right .username-input,
 .sign-form .single-line-wrapper .single-line-right .password-input,
-.sign-form .single-line-wrapper .single-line-right .email-input {
+.sign-form .single-line-wrapper .single-line-right .phone-input {
   border-bottom: 1px solid #78a2bd;
 }
+
 .sign-form .single-line-wrapper .single-line-right .username-input input,
 .sign-form .single-line-wrapper .single-line-right .password-input input,
-.sign-form .single-line-wrapper .single-line-right .email-input input {
+.sign-form .single-line-wrapper .single-line-right .phone-input input {
   width: 100%;
   font-size: 16px;
   padding: 12px 0;
@@ -37,16 +43,19 @@
   overflow: hidden;
   text-overflow: ellipsis;
 }
+
 .sign-form .single-line-wrapper .single-line-right .username-input input:hover,
 .sign-form .single-line-wrapper .single-line-right .password-input input:hover,
-.sign-form .single-line-wrapper .single-line-right .email-input input:hover {
+.sign-form .single-line-wrapper .single-line-right .phone-input input:hover {
   padding-left: 10px;
 }
+
 .sign-form .single-line-wrapper .single-line-right .error-message {
   margin: 8px 0;
   font-size: 12px;
   color: red;
 }
+
 .sign-form .submit-line {
   display: flex;
   width: 100%;
@@ -55,6 +64,7 @@
   justify-content: center;
   align-items: center;
 }
+
 .sign-form .submit-line .submit {
   width: 100%;
   border-radius: 20px;
@@ -68,9 +78,11 @@
   opacity: 0.75;
   color: #ddd;
 }
+
 .sign-form .submit-line .submit:hover {
   opacity: 1;
 }
+
 .sign-form .sign-switch {
   display: flex;
   width: 100%;
@@ -78,6 +90,7 @@
   margin-top: 20px;
   align-items: center;
 }
+
 .sign-form .sign-switch .sign-link {
   flex: 1;
   display: flex;
@@ -85,6 +98,7 @@
   padding: 15px;
   justify-content: center;
 }
+
 .sign-form .sign-switch .sign-link a {
   display: flex;
   height: 100%;

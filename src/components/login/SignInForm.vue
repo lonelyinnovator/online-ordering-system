@@ -85,7 +85,11 @@ export default {
       password_visibility: "hidden",
     };
   },
+
+
+
   methods: {
+
     /**
      * 点击底部链接时切换登录和注册的状态，并将变化状态设为true
      */
@@ -143,27 +147,43 @@ export default {
      */
     sendRequest() {
       axios({
-        // url: "http://101.132.73.96/test/login",
-        // url: "http://101.132.73.96/test-1.0/login",
-        // url: "http://101.132.73.96/web/login",
-        url: "http://101.132.73.96/web/login",
+        url: "http://101.132.73.96/oos/user/login",
         method: "post",
         params: {
           name: this.username,
-          pwd: this.password,
+          password: this.password,
+          // token: token,
         },
+        // withCredentials: true,
       })
         .then((res) => {
           if (res.data) {
+            const data = res.data;
             console.log(res.data);
+            // 如果登录成功
+            if (data.status === "success") {
+              // 如果再登录一次，token时长更新
+              if (data.token) {
+                this.$cookies.set("user_session", data.token, 60 * 60 * 24);
+              }
+              // 如果登录成功
+              this.isSignin = true;
+              // 登录成功的信息
+              let msg = { header: "登录成功", content: "即将进入首页" };
+              // 向父组件发送登录成功的消息，第二个参数必须为true
+              this.$emit("msgOn", true, msg);
+            }
+            else {
+              this.isSignin = false;
+              let msg = { header: "登录失败", content: "用户名或密码错误!" };
+              this.$emit("msgOn", true, msg);
+            }
           }
         })
         .catch((err) => {
           console.log(err);
         });
-      this.isSignin = true;
-      let msg = { header: "登录成功", content: "即将进入首页" };
-      this.$emit("msgOn", true, msg);
+
       // this.$router.push("/home");
     },
   },

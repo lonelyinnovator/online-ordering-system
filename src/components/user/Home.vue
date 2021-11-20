@@ -18,6 +18,17 @@ export default {
     };
   },
   methods: {},
+
+  beforeCreate() {
+    let token = "";
+    if (this.$cookies.isKey("user_session")) {
+
+      token = this.$cookies.get("user_session");
+    }
+    else {
+      this.$router.replace("/login")
+    }
+  },
 };
 </script>
 

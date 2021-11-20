@@ -6,7 +6,7 @@
       <!-- 框头 -->
       <div class="popout-header">
         <h3>{{ msg.header }}</h3>
-        <a href="#" @click="close">✖</a>
+        <div class="popout-header-close" @click="close">✖</div>
       </div>
       <!-- 内容 -->
       <div class="popout-content">{{ msg.content }}</div>
@@ -127,7 +127,8 @@ export default {
         color: #666;
       }
 
-      a {
+      .popout-header-close {
+        cursor: pointer;
         position: absolute;
         font-size: 16px;
         right: 0;
