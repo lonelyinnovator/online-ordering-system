@@ -48,10 +48,10 @@ export default {
   data() {
     return {
       path: [
-        "/#/user/home",
-        "/#/user/shoppingcart",
-        "/#/user/orderings",
-        "/#/user/settings",
+        "/online-ordering-system/#/user/home",
+        "/online-ordering-system/#/user/shoppingcart",
+        "/online-ordering-system/#/user/orderings",
+        "/online-ordering-system/#/user/settings",
       ],
     };
   },
